@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments :: head('Todo')}"></head>
+<body class="container p-3">
+  <h1 th:text="${message}"></h1>
+
+  <div th:replace="~{fragments :: createTodo}"></div>
+
+</body>
+</html>
