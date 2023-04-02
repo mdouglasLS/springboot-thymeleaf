@@ -3,7 +3,5 @@
 Projeto para conhecer e explorar as stacks Thymeleaf e Spring Boot. 
 
 TODO:
-- Controlers para cadastrar novos `todos` 
-- Controlers para listar novos `todos` 
-- Controlers para editar novos `todos`
-- Aprender como funciona as views e como reaproveitar componentes 
+-  Enum para as cores dos cards `EM ANDAMENTO = warning` `ATRASADO = danger` `CONCLUIDO = success`
+- Mensagens de erro ou sucesso quando realizar alguma ação de formulário
