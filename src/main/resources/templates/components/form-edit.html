@@ -1,0 +1,17 @@
+<div class="w-75" th:fragment="formEdit" style="max-width: 40em">
+  <form th:object="${todoDto}" th:action="@{'/edit/' + ${todoId}}" method="post">
+    <div class="mb-3 input-group-lg">
+      <input type="text" class="form-control" id="title" name="title" th:field="*{title}">
+    </div>
+    <div class="mb-3 input-group-lg">
+      <input type="text" class="form-control" id="description" name="description" th:field="*{description}">
+    </div>
+    <div class="mb-3">
+      <select class="form-select form-select-lg" name="status" th:field="*{status}">
+        <option th:each="allStatus : ${statusTodo}"
+                th:value="${allStatus}" th:text="${allStatus}">...</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success w-100">Atualizar</button>
+  </form>
+</div>

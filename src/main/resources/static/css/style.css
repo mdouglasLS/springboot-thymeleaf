@@ -1,0 +1,12 @@
+body {
+    background: #33333a;
+    color: #fff;
+}
+
+.nav-link{
+    color: #dedcdc
+}
+
+.nav-link:hover{
+    color: #a49f9f
+}

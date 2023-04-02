@@ -1,0 +1,39 @@
+<div th:fragment="todoCard" class="row">
+  <div class="col-sm-6 col-lg-4 mb-3" th:each="todo : ${todos}">
+    <div class="card text-bg-dark text-center}">
+      <div class="card-header" th:text="${todo.title}">...</div>
+      <div class="card-body">
+        <p class="card-text" th:text="${todo.description}">...</p>
+
+        <div class="">
+          <div class="btn-group">
+            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" th:text="${todo.status}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              ...
+            </button>
+            <ul class="dropdown-menu" >
+              <li th:each="allStatus : ${statusTodo}">
+                <th:block th:if="${allStatus != todo.status}">
+                  <form th:action="@{/edit-status}" method="get">
+                    <input type="hidden" name="id" th:value="${todo.id}">
+                    <input type="hidden" name="status" th:value="${allStatus}">
+                    <button type="submit" class="dropdown-item" th:text="${allStatus}"></button>
+                  </form>
+                </th:block>
+              </li>
+            </ul>
+          </div>
+
+          <div class="float-end">
+            <a class="text-decoration-none" th:href="@{'/edit/' + ${todo.id}}">
+              <img th:src="@{/img/edit.png}" alt="edit icon for edit a To-do" style="width: 1.4em">
+            </a>
+            <a class="text-decoration-none" th:href="@{'/delete/' + ${todo.id}}">
+              <img th:src="@{/img/trash.png}" alt="trash icon for delete a To-do" style="width: 1.4em">
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

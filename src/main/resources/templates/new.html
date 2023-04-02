@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="~{fragments :: head('Todo')}"></head>
-<body class="container p-3">
-  <h1 th:text="${message}"></h1>
+<head th:replace="~{components/head :: head('Novo - Todo')}"></head>
+<body class="">
+<div th:replace="~{components/header :: header}"></div>
 
-  <div th:replace="~{fragments :: createTodo}"></div>
+<main class="container p-3 d-flex justify-content-center">
+  <div th:replace="~{components/form-todo :: createTodo}"></div>
+</main>
 
 </body>
 </html>

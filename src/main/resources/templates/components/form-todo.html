@@ -1,0 +1,17 @@
+<div class="w-75" th:fragment="createTodo" style="max-width: 40em">
+  <form th:action="@{/create}" method="post">
+    <div class="mb-3 input-group-lg">
+      <input type="text" class="form-control" id="title" name="title" placeholder="Tarefa">
+    </div>
+    <div class="mb-3 input-group-lg">
+      <input type="text" class="form-control" id="description" name="description" placeholder="Descrição">
+    </div>
+    <div class="mb-3">
+      <select class="form-select form-select-lg" name="status">
+        <option th:each="status : ${statusTodo}"
+                th:value="${status}" th:text="${status}">...</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+  </form>
+</div>
