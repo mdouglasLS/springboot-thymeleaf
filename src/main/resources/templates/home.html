@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org/%22%3E">
+<html lang="en">
 <head th:replace="~{components/head :: head('Home - Todo')}"></head>
-<body class="">
+<body>
+
     <div th:replace="~{components/header :: header}"></div>
 
     <main class="container p-3 d-flex justify-content-center">
         <section th:insert="~{components/card-todo :: todoCard}"></section>
     </main>
-
-
 
 </body>
 </html>

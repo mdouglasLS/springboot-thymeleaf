@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head th:replace="~{components/head :: head('Novo - Todo')}"></head>
-<body class="">
-<div th:replace="~{components/header :: header}"></div>
+<body>
 
-<main class="container p-3 d-flex justify-content-center">
-  <div th:replace="~{components/form-todo :: form('Cadastrar', @{'/create'}, 'POST')}"></div>
-</main>
+  <div th:replace="~{components/header :: header}"></div>
+
+  <main class="container p-3 d-flex justify-content-center">
+    <div th:replace="~{components/form-todo :: form('Cadastrar', @{'/create'}, 'POST')}"></div>
+  </main>
 
 </body>
 </html>
