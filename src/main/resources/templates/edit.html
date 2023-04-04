@@ -5,7 +5,7 @@
 <div th:replace="~{components/header :: header}"></div>
 
 <main class="container p-3 d-flex justify-content-center">
-  <div th:replace="~{components/form-edit :: formEdit}"></div>
+  <div th:replace="~{components/form-todo :: form('Atualizar', @{'/edit/' + ${todoId}}, 'POST')}"></div>
 </main>
 
 </body>

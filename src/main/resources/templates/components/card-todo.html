@@ -1,5 +1,5 @@
 <div th:fragment="todoCard" class="row">
-  <div class="col-sm-6 col-lg-4 mb-3" th:each="todo : ${todos}">
+  <div class="col-6 mb-3" th:each="todo : ${todos}">
     <div class="card text-bg-dark text-center}">
       <div class="card-header" th:text="${todo.title}">...</div>
       <div class="card-body">

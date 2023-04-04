@@ -30,7 +30,8 @@ public class TodoController {
     }
 
     @GetMapping("/new")
-    public String newTodo(Model model) {
+    public String newTodo(Model model, TodoDto todoDto) {
+        todoDto = new TodoDto();
         model.addAttribute("statusTodo", StatusTodoEnum.values());
         return "new";
     }

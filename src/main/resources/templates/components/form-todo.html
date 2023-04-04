@@ -1,17 +1,17 @@
-<div class="w-75" th:fragment="createTodo" style="max-width: 40em">
-  <form th:action="@{/create}" method="post">
+<div class="w-75" th:fragment="form(btnText, route, method)" style="max-width: 40em">
+  <form th:object="${todoDto}" th:action="${route}" th:method="${method}">
     <div class="mb-3 input-group-lg">
-      <input type="text" class="form-control" id="title" name="title" placeholder="Tarefa">
+      <input type="text" class="form-control" id="title" name="title" th:field="*{title}" placeholder="Titulo">
     </div>
     <div class="mb-3 input-group-lg">
-      <input type="text" class="form-control" id="description" name="description" placeholder="Descrição">
+      <input type="text" class="form-control" id="description" name="description" th:field="*{description}" placeholder="Descrição">
     </div>
     <div class="mb-3">
-      <select class="form-select form-select-lg" name="status">
-        <option th:each="status : ${statusTodo}"
-                th:value="${status}" th:text="${status}">...</option>
+      <select class="form-select form-select-lg" name="status" th:field="*{status}">
+        <option th:each="allStatus : ${statusTodo}"
+                th:value="${allStatus}" th:text="${allStatus}">...</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+    <button type="submit" class="btn btn-success w-100" th:text="${btnText}">...</button>
   </form>
 </div>
